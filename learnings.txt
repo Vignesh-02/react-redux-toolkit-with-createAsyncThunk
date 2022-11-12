@@ -1,0 +1,9 @@
+1. Note, useSelector and useDispatch are imported from 'react-redux' and not 'react'
+
+2. Create a slice of the data using createSlice in features/item/itemSllice
+using createSlice command.
+
+3. export the reducer function associated with it.
+
+4. Import it to the store in app/store
+and add it to the reducer method in configureStore
