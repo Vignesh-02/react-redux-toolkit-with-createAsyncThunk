@@ -7,3 +7,5 @@ using createSlice command.
 
 4. Import it to the store in app/store
 and add it to the reducer method in configureStore
+
+5. When you are exporting a function, you have to always return something.

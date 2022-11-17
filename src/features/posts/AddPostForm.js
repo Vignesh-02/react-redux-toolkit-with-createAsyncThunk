@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { addNewPost } from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddPostForm = () => {
     const dispatch = useDispatch()
 
+    const navigate = useNavigate`9`
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState('')
@@ -26,10 +28,11 @@ const AddPostForm = () => {
             try {
                 setAddRequestStatus('pending')
                 dispatch(addNewPost({ title, body: content, userId })).unwrap()
-
+                //unwrap creates a promise and allows us to reject or catch the error
                 setTitle('')
                 setContent('')
                 setUserId('')
+                navigate('/')
             } catch (err) {
                 console.error('Failed to save the post', err)
             } finally {
